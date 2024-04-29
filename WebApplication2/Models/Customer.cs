@@ -9,6 +9,6 @@ namespace Project.Models
         public string Country { get; set; }
         public string CPhone { get; set; }
         public string CEmail { get; set; }
-        public List<Account> Accounts { get; set; }
+        public Account Account { get; set; }
     }
 }

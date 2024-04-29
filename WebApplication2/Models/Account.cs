@@ -9,8 +9,9 @@ namespace Project.Models
         {
             [Key]
             public Guid Id { get; set; }
-            public Guid CustomerID { get; set; }
-            public string Name { get; set; }
+
+         
+             public string Name { get; set; }
             public string LastName { get; set; }
             public string City { get; set; }
             public string Email { get; set; }
@@ -19,11 +20,17 @@ namespace Project.Models
             public double Balance { get; set; }
         public List<Transactions> Transactions { get; set; }
         public List<Card> Cards { get; set; }
-        public virtual Customer Customers { get; set; }
+        public virtual Customer Customer { get; set; }
 
         [ForeignKey("Customer")]
-        public Guid CustomerId { get; set; } // Змінено тип на Guid
+        public Guid CustomerId { get; set; }
+
+        public virtual Employee  Employees{ get; set; }
+
+        [ForeignKey("Employees")]
+        public Guid EmployeeID { get; set; }
     }
+}
 
     
-}
+

@@ -14,12 +14,12 @@ namespace Project.Models
         public DateTime DataDii { get; set; }
         public int CVV { get; set; }
         public decimal Balance { get; set; }
+
+        public string AccLink { get; set; }
         public virtual Account Account { get; set; }
 
         [ForeignKey("Account")]
         public Guid AccountId { get; set; }
-        public List<Transactions> Transactions { get; set; }
-
-        public string AccLink { get; set; }
+        public List<Transactions> Transactions { get; set; } 
     }
 }
