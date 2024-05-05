@@ -21,7 +21,7 @@ namespace Project.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-V7A1AEP;" +
-                            "Initial Catalog=Bank;" +
+                            "Initial Catalog=Banks;" +
                             "Integrated Security=True;" +
                             "TrustServerCertificate=True;");
             ;
@@ -29,9 +29,9 @@ namespace Project.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Card>()
-            //    .Property(c => c.Balance)
-            //    .HasColumnType("decimal(18,2)");
+            modelBuilder.Entity<Card>()
+                .Property(c => c.Balance)
+                .HasColumnType("decimal(18,2)");
 
             //один аккаунт, багато карт
             modelBuilder.Entity<Account>()

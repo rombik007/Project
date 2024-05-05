@@ -9,9 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<CustomerService, CustomerService>();//“”т вс≥ додати
-builder.Services.AddScoped<EmployeesServise,  EmployeesServise>();
-
+builder.Services.AddScoped<ICustomerService, CustomerService>();//“”т вс≥ додати
+builder.Services.AddScoped<IEmployeesService,  EmployeesServise>();
+//builder.Services.AddScoped<IAccountServices, AccountService>();
 //Here changes
 builder.Services.AddDbContext <BankContext>(options =>
 {
